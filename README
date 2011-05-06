@@ -1,0 +1,59 @@
+WHAT IS bananaBF?
+A brainfuck interpreter.
+
+
+BUILDING
+On UNIX simply type (you need to authenticate you, this
+installation installs to /usr/bin, I provide a make clean,
+too!):
+$ make
+$ sudo make install
+
+On other operating systems use any standard C compiler.
+Build the banana binary from the main.c
+
+
+USAGE
+$ banana [-b] [brainfuck code file]
+
+Only the brainfuck operators (< > , . [ ] - +) will be
+interpreted. "-d" enables debugging information.
+
+
+WHAT IS BRAINFUCK?
+Brainfuck is an esoteric programming language that only
+uses eight characters: + - < > [ ] , .
+Brainfuck is Turing complete and extreme minimalistic.
+
+
+WHY IS IT CALLED banana?
+While I came up with the idea of writing a brainfuck
+interpreter, i ate a banana. It starts with the same
+letter -> win!
+
+
+LIMITS
+The number of cells is limited to the memory of your
+computer. Only needed memory is allocated. Each cell
+can contain a value in standard integer size. This
+depends of your OS but is probably 2E32.The number of
+commands is limited by a buffersize defined in prepro-
+cessor. Default is 1024 characters. If you have a bigger
+sourcefile, you need to change the constant and recompile.
+
+
+COPYRIGHT
+(c) Ps0ke 2011
+CreativeCommons BY NC SA 3.0
+cc-by-nc-sa
+
+
+CREDITS
+Thanks to Ro0mquy for help with fileio and implementing
+nesting loops.
+
+
+RESOURCE
+http://en.wikipedia.org/wiki/Brainfuck
+http://esolangs.org/wiki/Brainfuck
+http://www.muppetlabs.com/~breadbox/bf/
