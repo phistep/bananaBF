@@ -20,4 +20,4 @@
 > + .                   print '!'
 > .                     print '\n'
 
-From http://en.wikipedia.org/wiki/Brainfuck
+From http://en dot wikipedia dot org/wiki/Brainfuck
