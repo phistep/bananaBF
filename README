@@ -36,10 +36,12 @@ LIMITS
 The number of cells is limited to the memory of your
 computer. Only needed memory is allocated. Each cell
 can contain a value in standard integer size. This
-depends of your OS but is probably 2E32.The number of
+depends of your OS but is probably 2E32-1.The number of
 commands is limited by a buffersize defined in prepro-
 cessor. Default is 1024 characters. If you have a bigger
 sourcefile, you need to change the constant and recompile.
+You can only nest 2E32-1 loops, again, this is an integer
+sized counter.
 
 
 COPYRIGHT

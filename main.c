@@ -54,14 +54,31 @@ void computing (char *codeptr, int *cellpos, int *cellsize, int *cellptr) {
 			case '[':
 				msg("begin loop");
 				
-				char *startptr = codeptr + 1;
-				while (*codeptr != ']'){codeptr++;}
-				*codeptr = 0;
+				int nestinglvl = 0;
 				codeptr++;
+				char *startptr = codeptr;
+				while (1){
+					if (*codeptr == '[') {
+						nestinglvl++;
+					}
+					else if (*codeptr == ']') {
+						if (nestinglvl == 0) {
+							break;
+						}
+						nestinglvl--;
+					}
+					codeptr++;
+					
+					if (debug) printf("\tnestinglvl: %i\n", nestinglvl);
+				}
+				*codeptr = 0;
+				msg("Replaced ']' with '\\0'");
 				
 				do {
 					computing(startptr, cellpos, cellsize, cellptr);
 				} while (*(cellptr + *cellpos) != 0);
+				
+				*codeptr = ']';
 				break;
 			default:
 				msg("ignoring as comment");
