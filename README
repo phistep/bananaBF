@@ -14,7 +14,7 @@ Build the banana binary from the main.c
 
 
 USAGE
-$ banana [-b] [brainfuck code file]
+$ banana [-d] [brainfuck code file]
 
 Only the brainfuck operators (< > , . [ ] - +) will be
 interpreted. "-d" enables debugging information.
